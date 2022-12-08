@@ -1,0 +1,50 @@
+<div>
+    <h2 class="text-dark text-center">Login wallet </h2>
+  </div>
+  <div class="row">
+      <div class="col-sm-4">
+
+      </div>
+<div class="container col-sm-4">
+    <table>
+        <tr>
+            <td>User Id:</td>
+            <td><input type="text" [(ngModel)]="id"  name="empId" #id1="ngModel" required></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" [(ngModel)]="psw" name="empPasswaord" #psw1="ngModel" required></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <input class="btn btn-success ml-5 btn-lg" (click)="login()"type="button"  value ="Login"></tr>
+    </table>
+</div>
+<div class="col-sm-4"></div>
+</div>
+<div *ngIf="id1.invalid && (id1.dirty || id1.touched)"
+    class="alert container">
+  <div *ngIf="id1.errors?.['required']" class="alert alert-danger" role="alert">
+    Id is required.
+  </div>
+</div>
+
+
+
+<div *ngIf="psw1.invalid && (psw1.dirty || psw1.touched)"
+    class="alert container">
+
+  <div *ngIf="psw1.errors?.['required']" class="alert alert-danger" role="alert">
+    Password is required.
+  </div>
+
+</div>
+
+<div *ngIf="islogin" class="alert alert-success container" role="alert">
+    loged in Successfully
+  </div>
+  <div *ngIf="warning" class="alert alert-success alert-danger container" role="alert">
+    loged in Failure
+  </div>
+

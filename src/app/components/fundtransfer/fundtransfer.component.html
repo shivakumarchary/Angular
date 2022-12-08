@@ -1,0 +1,63 @@
+<div>
+    <h2 class="text-dark text-center">Fund Transfer</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"></div>
+   <div class="container col-sm-4">
+    <table>
+       
+<div class="container auto-fill">
+    <table>
+        <tr>
+            <td>From Id:</td>
+            <td><input type="text" [(ngModel)]="wallet.id"  name="userid" #id1="ngModel" required disabled></td>
+        </tr>
+        <tr>
+            <td>To Id:</td>
+            <td><input type="text" [(ngModel)]="ToId"  name="userid" #id2="ngModel" required></td>
+        </tr>
+        
+        
+        <tr>
+            <td>Balance to Transfer:</td>
+            <td><input type="number" [(ngModel)]="balance" name="balance" #blc="ngModel" required></td>
+        </tr>
+        
+
+        <tr>
+            <td></td>
+            <input class="btn btn-success ml-5 btn-lg" (click)="fundsToTransfer()"type="submit"  value ="Transfer"></tr>
+    </table>
+</div>
+    </table>
+</div>
+<div class="col-sm-4"></div>
+</div>
+<div *ngIf="id1.invalid && (id1.dirty || id1.touched)"
+    class="alert container">
+  <div *ngIf="id1.errors?.['required']" class="alert alert-danger" role="alert">
+    FromId is required.
+  </div>
+</div>
+<div *ngIf="id2.invalid && (id2.dirty || id2.touched)"
+    class="alert container">
+  <div *ngIf="id2.errors?.['required']" class="alert alert-danger" role="alert">
+    ToId is required.
+  </div>
+</div>
+<div *ngIf="blc.invalid && (blc.dirty || blc.touched)"
+    class="alert container">
+
+  <div *ngIf="blc.errors?.['required']" class="alert alert-danger" role="alert ">
+    Balance is required.
+  </div>
+</div>
+<div *ngIf="isTransferd" class="alert alert-success container" role="alert">
+  Transaction Successful
+</div>
+<div *ngIf="notEnought" class="alert alert-danger container" role="alert">
+  Not Enought Fund
+</div>
+<div *ngIf="notFound" class="alert alert-danger container" role="alert">
+  Wallet Id not found
+</div>

@@ -1,0 +1,73 @@
+<div>
+    <h2 class="text-dark text-center">Register wallet </h2>
+  </div>
+  <div class="justify-content-center row">
+      <div class="col-sm-4"></div>
+<div class="container col-sm-4 ">
+   
+    <table>
+        <tr>
+            <td>User Id:</td>
+            <td><input type="text" [(ngModel)]="newWallet.id"  name="empId" #id="ngModel" required></td>
+        </tr>
+        
+        <tr>
+            <td>User Name:</td>
+            <td><input type="text" [(ngModel)]="newWallet.name"  name="empname" #name="ngModel" required></td>
+        </tr>
+        
+        <tr>
+            <td>Balance:</td>
+            <td><input type="number" [(ngModel)]="newWallet.balance" name="empSalary" #blc="ngModel" required></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" [(ngModel)]="newWallet.password" name="empPasswaord" #psw="ngModel" required></td>
+        </tr>
+<tr><td colspan="2"></td></tr>
+        <tr class="text-center" >
+            <td colspan="2" > <input class="btn btn-success btn-lg ml-5 " (click)="addUser()"type="button"  value ="Register"></td>
+        </tr>
+           
+    </table>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<div *ngIf="id.invalid && (id.dirty || id.touched)"
+    class="alert container">
+  <div *ngIf="id.errors?.['required']" class="alert alert-danger container" role="alert">
+    Id is required.
+  </div>
+</div>
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert container">
+
+  <div *ngIf="name.errors?.['required']" class="alert alert-danger container" role="alert">
+    Name is required.
+  </div>
+
+</div>
+<div *ngIf="blc.invalid && (blc.dirty || blc.touched)"
+    class="alert container">
+
+  <div *ngIf="blc.errors?.['required']" class="alert alert-danger container" role="alert ">
+    Balance is required.
+  </div>
+</div>
+<div *ngIf="psw.invalid && (psw.dirty || psw.touched)"
+    class="alert container">
+
+  <div *ngIf="psw.errors?.['required']" class="alert alert-danger container" role="alert">
+    Password is required.
+  </div>
+
+</div>
+<div *ngIf="IsReg" class="alert alert-success container" role="alert">
+    Registration Successful
+  </div>
+  <div *ngIf="IsNotReg" class="alert alert-danger container" role="alert">
+    Registration Failure
+  </div>
+  
+

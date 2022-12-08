@@ -1,0 +1,21 @@
+<div>
+    <h2 class="text-dark text-center">Delete wallet </h2>
+  </div>
+  <div class="row">
+      <div class="col-sm-4"></div>
+<div class="container text-center col-sm-4">
+    <table>
+        <tr>
+           
+            <td><input type="text" [(ngModel)]="newWallet.id"  name="empId" placeholder="Enter User Id" disabled></td>
+            <td> <input class="btn btn-danger ml-5 btn-lg " (click)="deleteUser(newWallet.id)"type="button"  value ="Delete"></td>
+        </tr>
+       
+       
+    </table>
+</div>
+<div class="col-sm-4"></div>
+</div>
+<div *ngIf="isDeleted" class="alert alert-success container" role="alert">
+    Deleted Successfully
+  </div>

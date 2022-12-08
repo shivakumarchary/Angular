@@ -1,0 +1,52 @@
+<div>
+    <h2 class="text-dark text-center">Add Funds to wallet</h2>
+  </div>
+  <div class="row"></div>
+<div class="container col-sm-4">
+    <form>
+        <table>
+            <tr>
+                <td>User Id:</td>
+                <td><input type="text" [(ngModel)]="wallet.id" name="userid"  #name="ngModel" required disabled></td>
+            </tr>
+            
+            
+            
+            <tr>
+                <td>Balance:</td>
+                <td><input type="number" [(ngModel)]="balance" name="balance" #blc="ngModel" required   ></td>
+            </tr>
+            
+    
+            <tr>
+                <td></td>
+                <input class="btn btn-success ml-5 btn-lg" (click)="addfunds()"type="submit"  value ="Add Fund"></tr>
+        </table>
+    
+    </form>
+    </div>
+    <div class="col-sm-4"></div>
+
+<div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert">
+
+  <div *ngIf="name.errors?.['required']" class="alert alert-danger" role="alert">
+    Name is required.
+  </div>
+
+</div>
+<div *ngIf="blc.invalid && (blc.dirty || blc.touched)"
+    class="alert">
+
+  <div *ngIf="blc.errors?.['required']" class="alert alert-danger" role="alert">
+    Balance is required.
+  </div>
+
+</div>
+
+<div *ngIf="IsFundAdded" class="alert alert-success container" role="alert">
+  Fund Added
+</div>
+<div *ngIf="IsFundNotAdded" class="alert alert-danger container" role="alert">
+  Fund  not Added
+</div>
